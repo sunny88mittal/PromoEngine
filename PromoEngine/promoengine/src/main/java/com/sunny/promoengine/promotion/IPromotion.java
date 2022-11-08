@@ -1,4 +1,4 @@
-package com.sunny.promoengine.promos;
+package com.sunny.promoengine.promotion;
 
 import java.util.List;
 import java.util.Map;
