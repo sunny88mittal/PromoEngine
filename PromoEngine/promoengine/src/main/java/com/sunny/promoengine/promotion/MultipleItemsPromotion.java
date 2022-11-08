@@ -17,7 +17,7 @@ public class MultipleItemsPromotion implements IPromotion {
 	}
 
 	@Override
-	public int applyPromo(List<String> cartItems, Map<String, Integer> productPriceMap) {
+	public int applyPromo(List<String> cartItems) {
 		int totalPrice = 0;
 		while (cartItems.removeAll(items)) {
 			totalPrice += price;

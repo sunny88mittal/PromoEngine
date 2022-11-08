@@ -1,7 +1,6 @@
 package com.sunny.promoengine.promotion;
 
 import java.util.List;
-import java.util.Map;
 
 public class NItemsPromotion implements IPromotion {
 
@@ -19,7 +18,7 @@ public class NItemsPromotion implements IPromotion {
 	}
 
 	@Override
-	public int applyPromo(List<String> items, Map<String, Integer> productPriceMap) {
+	public int applyPromo(List<String> items) {
 		int itemsCount = 0;
 		for (String cartItem : items) {
 			if (cartItem.equals(item)) {
