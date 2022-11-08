@@ -30,12 +30,12 @@ public class TestNItemsPromotion {
 
 	@Test
 	public void TestCartWithAllItemsEligibleForPromotion() {
-		List<String> cartItems = Arrays.asList("A", "C", "D", "A", "A");
+		List<String> cartItems = Arrays.asList("A", "A", "A");
 		List<String> cartItemsCopy = new ArrayList<String>();
 		cartItemsCopy.addAll(cartItems);
 
 		int price = nItemsPromotion.applyPromo(cartItemsCopy);
-		List<String> remainingCartItems = Arrays.asList("C", "D");
+		List<String> remainingCartItems = Arrays.asList();
 
 		Assert.assertEquals(price, 130);
 		Assert.assertTrue(remainingCartItems.equals(cartItemsCopy));
