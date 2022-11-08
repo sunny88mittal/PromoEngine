@@ -20,7 +20,7 @@ public class TestMultipleItemsPromotion {
 	}
 
 	@Test
-	public void TestCartWithNoPromoItems() {
+	public void testCartWithNoPromoItems() {
 		List<String> cartItems = Arrays.asList("A", "A", "A", "A", "D");
 		List<String> cartItemsCopy = Collections.unmodifiableList(cartItems);
 		int price = multiItemsPromotion.applyPromo(cartItems);
@@ -29,7 +29,7 @@ public class TestMultipleItemsPromotion {
 	}
 
 	@Test
-	public void TestCartWithAllItemsEligibleForPromotion() {
+	public void testCartWithAllItemsEligibleForPromotion() {
 		List<String> cartItems = Arrays.asList("B", "C", "B", "C");
 		List<String> cartItemsCopy = new ArrayList<String>();
 		cartItemsCopy.addAll(cartItems);
@@ -42,7 +42,7 @@ public class TestMultipleItemsPromotion {
 	}
 
 	@Test
-	public void TestCartWithSomesItemsEligibleForPromotion() {
+	public void testCartWithSomesItemsEligibleForPromotion() {
 		List<String> cartItems = Arrays.asList("B", "C", "B", "A", "A");
 		List<String> cartItemsCopy = new ArrayList<String>();
 		cartItemsCopy.addAll(cartItems);
@@ -50,12 +50,12 @@ public class TestMultipleItemsPromotion {
 		int price = multiItemsPromotion.applyPromo(cartItemsCopy);
 		List<String> remainingCartItems = Arrays.asList("B", "A", "A");
 
-		Assert.assertEquals(price, 30);
+		Assert.assertEquals(30, price);
 		Assert.assertTrue(remainingCartItems.equals(cartItemsCopy));
 	}
 
 	@Test
-	public void TestCartWithMultipleItemSetsEligibleForPromotion() {
+	public void testCartWithMultipleItemSetsEligibleForPromotion() {
 		List<String> cartItems = Arrays.asList("B", "C", "D", "B", "C", "A", "A");
 		List<String> cartItemsCopy = new ArrayList<String>();
 		cartItemsCopy.addAll(cartItems);
@@ -63,7 +63,7 @@ public class TestMultipleItemsPromotion {
 		int price = multiItemsPromotion.applyPromo(cartItemsCopy);
 		List<String> remainingCartItems = Arrays.asList("D", "A", "A");
 
-		Assert.assertEquals(price, 60);
+		Assert.assertEquals(60, price);
 		Assert.assertTrue(remainingCartItems.equals(cartItemsCopy));
 	}
 }

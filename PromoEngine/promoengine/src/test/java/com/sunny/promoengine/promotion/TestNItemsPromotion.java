@@ -20,7 +20,7 @@ public class TestNItemsPromotion {
 	}
 
 	@Test
-	public void TestCartWithNoPromoItems() {
+	public void testCartWithNoPromoItems() {
 		List<String> cartItems = Arrays.asList("B", "C", "D", "B", "B");
 		List<String> cartItemsCopy = Collections.unmodifiableList(cartItems);
 		int price = nItemsPromotion.applyPromo(cartItems);
@@ -29,7 +29,7 @@ public class TestNItemsPromotion {
 	}
 
 	@Test
-	public void TestCartWithAllItemsEligibleForPromotion() {
+	public void testCartWithAllItemsEligibleForPromotion() {
 		List<String> cartItems = Arrays.asList("A", "A", "A");
 		List<String> cartItemsCopy = new ArrayList<String>();
 		cartItemsCopy.addAll(cartItems);
@@ -42,7 +42,7 @@ public class TestNItemsPromotion {
 	}
 
 	@Test
-	public void TestCartWithSomesItemsEligibleForPromotion() {
+	public void testCartWithSomesItemsEligibleForPromotion() {
 		List<String> cartItems = Arrays.asList("A", "A", "D", "A", "A");
 		List<String> cartItemsCopy = new ArrayList<String>();
 		cartItemsCopy.addAll(cartItems);
@@ -55,7 +55,7 @@ public class TestNItemsPromotion {
 	}
 
 	@Test
-	public void TestCartWithMultipleItemSetsEligibleForPromotion() {
+	public void testCartWithMultipleItemSetsEligibleForPromotion() {
 		List<String> cartItems = Arrays.asList("A", "A", "D", "A", "A", "A", "A");
 		List<String> cartItemsCopy = new ArrayList<String>();
 		cartItemsCopy.addAll(cartItems);

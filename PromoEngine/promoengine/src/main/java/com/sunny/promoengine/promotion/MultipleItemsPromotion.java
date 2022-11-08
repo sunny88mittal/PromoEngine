@@ -18,8 +18,11 @@ public class MultipleItemsPromotion implements IPromotion {
 	@Override
 	public int applyPromo(List<String> cartItems) {
 		int totalPrice = 0;
-		while (cartItems.remove(items)) {
+		while (cartItems.containsAll(items)) {
 			totalPrice += price;
+			for (String item : items) {
+				cartItems.remove(item);
+			}
 		}
 		return totalPrice;
 	}
