@@ -20,7 +20,19 @@ public class NItemsPromotion implements IPromotion {
 
 	@Override
 	public int applyPromo(List<String> items, Map<String, Integer> productPriceMap) {
-		// TODO Auto-generated method stub
-		return 0;
+		int itemsCount = 0;
+		for (String cartItem : items) {
+			if (cartItem.equals(item)) {
+				itemsCount++;
+			}
+		}
+
+		int itemSets = itemsCount / quantity;
+		int itemsPrice = price * itemSets;
+		for (int i = 0; i < quantity * itemSets; i++) {
+			items.remove(item);
+		}
+
+		return itemsPrice;
 	}
 }

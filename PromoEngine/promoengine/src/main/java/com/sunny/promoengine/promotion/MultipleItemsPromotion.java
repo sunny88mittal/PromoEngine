@@ -11,13 +11,17 @@ public class MultipleItemsPromotion implements IPromotion {
 	private final int price;
 
 	public MultipleItemsPromotion(List<String> items, int price) {
+		super();
 		this.items = Collections.unmodifiableList(items);
 		this.price = price;
 	}
 
 	@Override
-	public int applyPromo(List<String> items, Map<String, Integer> productPriceMap) {
-		// TODO Auto-generated method stub
-		return 0;
+	public int applyPromo(List<String> cartItems, Map<String, Integer> productPriceMap) {
+		int totalPrice = 0;
+		while (cartItems.removeAll(items)) {
+			totalPrice += price;
+		}
+		return totalPrice;
 	}
 }

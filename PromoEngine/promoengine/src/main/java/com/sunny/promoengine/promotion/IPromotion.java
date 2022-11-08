@@ -13,9 +13,9 @@ public interface IPromotion {
 
 	/**
 	 * Returns the price of the items on which the promotion is applied and removes them from list
-	 * @param items Cart Items
+	 * @param cartItems Cart Items
 	 * @param productPriceMap Items price map
 	 * @return price of items on which promotion is applied
 	 */
-	public int applyPromo(List<String> items, Map<String, Integer> productPriceMap);
+	public int applyPromo(List<String> cartItems, Map<String, Integer> productPriceMap);
 }
