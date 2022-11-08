@@ -2,7 +2,6 @@ package com.sunny.promoengine.promotion;
 
 import java.util.Collections;
 import java.util.List;
-import java.util.Map;
 
 public class MultipleItemsPromotion implements IPromotion {
 
@@ -19,7 +18,7 @@ public class MultipleItemsPromotion implements IPromotion {
 	@Override
 	public int applyPromo(List<String> cartItems) {
 		int totalPrice = 0;
-		while (cartItems.removeAll(items)) {
+		while (cartItems.remove(items)) {
 			totalPrice += price;
 		}
 		return totalPrice;
